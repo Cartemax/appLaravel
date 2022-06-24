@@ -1,6 +1,6 @@
 Proceso para instalar el proyecto de Laravel
 
-1. Ejecutar en el comado (CMD, POWERSHELL) = composer install
+1.Ejecutar en el comado (CMD, POWERSHELL) = composer install
 
 2.Cambiar nombre a .env si viene por ejemplo .env-ejemplo
 
