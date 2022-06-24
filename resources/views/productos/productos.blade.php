@@ -58,10 +58,10 @@
                 {{ $mayorStock->stock }}</span>
         </div>
     @endisset
-    @isset($mayorVendido)
+    @isset($mayorVendido[0])
         <div class="col-md-6">
-            <span class="alert alert-info">Mayor vendido: {{ $mayorVendido[0]->nombre_producto }} - Cantidad:
-                {{ $mayorVendido[0]->veces }}</span>
+            <span class="alert alert-info">Mayor vendido: {{ $mayorVendido[0]->nombre_producto }} - Veces vendidas:
+                {{ $mayorVendido[0]->veces }} - Cantidad: {{ $mayorVendido[0]->cantidad }}</span>
         </div>
     @endisset
 </div>

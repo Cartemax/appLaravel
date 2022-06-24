@@ -19,8 +19,8 @@ class ProductosController extends Controller
     public function index()
     {
         $productos = productos::all();
-        $mayorVendido = DB::select(DB::raw("SELECT p.nombre_producto, COUNT(*) as veces FROM productos_vendidos pv INNER JOIN productos p ON p.id = pv.id_producto GROUP BY id_producto ORDER BY COUNT(*) DESC LIMIT 1"));
-        $mayorStock = productos::orderBy('stock')->first();
+        $mayorVendido = DB::select(DB::raw("SELECT p.nombre_producto, COUNT(*) as veces, SUM(pv.cantidad) AS cantidad FROM productos_vendidos pv INNER JOIN productos p ON p.id = pv.id_producto GROUP BY id_producto ORDER BY COUNT(*) DESC LIMIT 1"));
+        $mayorStock = productos::orderBy('stock', 'DESC')->first();
 
         return view('productos/productos', compact(array('productos', 'mayorStock', 'mayorVendido')));
     }
